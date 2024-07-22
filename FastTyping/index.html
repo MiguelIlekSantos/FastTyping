@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <header></header>
+
+    <main id="gameWindow">
+        <div class="content">
+            <div class="content-top">
+                <div class="letters">
+                    <div>
+                        <p>Mistakes :</p>
+                        <p id="numMis">0</p>
+                    </div>
+                    <div>
+                        <p>Time :</p>
+                        <p id="time">0</p>
+                    </div>
+                </div>
+            </div>
+            <div class="content-bottom">
+                <p id="text">
+                    Select language before writing
+                </p>
+                <p class="textAbove" id="textAbove">
+
+                </p>
+                <p class="textAbove enemyText" id="enemyText">
+
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <div class="counter-content" id="counter-content">
+        <div class="counter">
+            <p id="counter">5</p>
+        </div>
+    </div>
+
+    <div id="resultsContent" class="center">
+        <div class="resultsWindow">
+            <div class="resultsTop">
+                <div class="Mistakes">
+                    <p>Mistakes</p>
+                    <p id="miss">0</p>
+                </div>
+                <div class="Time">
+                    <p>Time</p>
+                    <p id="timeResultsLabel">0</p>
+                </div>
+                <div class="Media">
+                    <p>Letter/sec</p>
+                    <p id="media">0</p>
+                </div>
+                <div class="Precision">
+                    <p>Precision</p>
+                    <p id="precision">0</p>
+                </div>
+            </div>
+            <div class="resultsBottom">
+                <div class="congratulations-content">
+                    <div class="congratulations">
+                        <figure>
+                            <img id="resultImg" src="" alt="Result img">
+                        </figure>
+                        <p id="resultText"></p>
+                    </div>
+                </div>
+                <div class="playAgainBtn">
+                    <button id="rematch" onclick="reMatch()" type="button">Offer Rematch</button>
+                    <button id="newOpo" onclick="newOponent()" type="button">New oponent</button>
+                    <button id="playAgain" onclick="againComputer()" type="button">Play again</button>
+                    <button id="goBack" onclick="goBackF()" type="button">Go back</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="input-content" class="input-content">
+        <div class="input-window">
+            <div>
+                <p>LOGIN</p>
+            </div>
+            <form action="">
+                <input id="nameInput" type="text" placeholder="Digit name" required>
+                <div class="language-content">
+                    <select name="language" class="language" id="language" required>
+                        <option value="" selected disabled>Choose language</option>
+                    </select>
+                </div>
+            </form>
+            <div>
+                <button onclick="sendName()" type="submit">Play online</button>
+                <button onclick="againstComputer()" type="submit">Play Against Computer</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="computer-content" id="computer-content">
+        <div class="computer">
+            <div>
+                <p>Choose difficulty level</p>
+            </div>
+            <form action="">
+                <select id="diff-choose" name="difficulty" class="difficulty" required>
+                    <option value="" selected disabled>Choose level</option>
+                    <option value="0.5">Expert</option>
+                    <option value="1">Fast</option>
+                    <option value="3">Medium</option>
+                    <option value="5">Slow</option>
+                    <option value="6">Pretty slow</option>
+                </select>
+            </form>
+            <div>
+                <button onclick="playComputer()" type="submit">Start</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="loading-content" class="loading-content">
+        <div class="loading" id="loading"></div>
+    </div>
+
+    <div class="choose-enemy-content" id="choose-enemy-content">
+        <div class="choose-enemy" id="choose-enemy"></div>
+    </div>
+
+    <div class="requests" id="requests"></div>
+
+    <footer></footer>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="assets/index.js"></script>
+</body>
+
+</html>
