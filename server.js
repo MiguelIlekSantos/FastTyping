@@ -178,8 +178,8 @@ io.on('connection', (socket) => {
 
 });
 
-server.listen(3000, '192.168.1.189',() => {
-    console.log('listening on 192.168.1.189:3000');
+server.listen(process.env.PORT || 3000, () => {
+    console.log('listening on port ' + (process.env.PORT || 3000));
 });
 
 setInterval(() => {
